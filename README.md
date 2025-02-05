@@ -1,5 +1,4 @@
 # Eternal Crosshair Menu
-**:tada: We’re excited to introduce our first script: Eternal Crosshair Menu! :fire: **
 
 `With this script, you now have the power to fully customize your crosshair or choose from a variety of pre-made options. Want to change something? No problem! This menu allows you to adjust to a new crosshair, from size and beyond. Plus, you can add or remove crosshairs from the pre-made menu.`
 
