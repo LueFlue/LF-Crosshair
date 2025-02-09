@@ -2,8 +2,8 @@ fx_version 'cerulean'
 lua54 'yes'
 game 'gta5'
 
-author 'Eternal Studio - https://discord.gg/f595VxygMt'
-description 'A Extremely Configurable Crosshair Menu'
+author 'LF Scripts - https://discord.gg/f595VxygMt'
+description 'Et ekstremt configurable crosshair menu'
 version '1.0.0'
 
 
