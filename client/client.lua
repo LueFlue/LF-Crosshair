@@ -1,20 +1,3 @@
------------------------------------------------------------------------------------------------------------------------------------------
---                                                                                                                                     --
---       /$$$$$$$$ /$$                                             /$$        /$$$$$$   /$$                     /$$ /$$                 --
---      | $$_____/| $$                                            | $$       /$$__  $$ | $$                    | $$|__/                --
---      | $$     /$$$$$$    /$$$$$$   /$$$$$$  /$$$$$$$   /$$$$$$ | $$      | $$  \__//$$$$$$   /$$   /$$  /$$$$$$$ /$$  /$$$$$$       --
---      | $$$$$ |_  $$_/   /$$__  $$ /$$__  $$| $$__  $$ |____  $$| $$      |  $$$$$$|_  $$_/  | $$  | $$ /$$__  $$| $$ /$$__  $$      --
---      | $$__/   | $$    | $$$$$$$$| $$  \__/| $$  \ $$  /$$$$$$$| $$       \____  $$ | $$    | $$  | $$| $$  | $$| $$| $$  \ $$      --
---      | $$      | $$ /$$| $$_____/| $$      | $$  | $$ /$$__  $$| $$       /$$  \ $$ | $$ /$$| $$  | $$| $$  | $$| $$| $$  | $$      --
---      | $$$$$$$$|  $$$$/|  $$$$$$$| $$      | $$  | $$|  $$$$$$$| $$      |  $$$$$$/ |  $$$$/|  $$$$$$/|  $$$$$$$| $$|  $$$$$$/      --
---      |________/ \___/   \_______/|__/      |__/  |__/ \_______/|__/       \______/   \___/   \______/  \_______/|__/ \______/       --
---                                                                                                                                     --
------------------------------------------------------------------------------------------------------------------------------------------
---                                                                                                                                     --
---                                           Copyright © 2024 Etneral Studio All Rights Reserved                                       --
---                                                                                                                                     --
------------------------------------------------------------------------------------------------------------------------------------------
-
 local previousCrosshair = nil 
 
 RegisterNUICallback('displayCrosshair', function(data)
@@ -29,9 +12,9 @@ RegisterNUICallback('displayCrosshair', function(data)
 end)
 
 DisplayCrosshair = function()
-    local input = lib.inputDialog(Eternal.Dialog.title, {
-        {type = 'input', label = Eternal.Dialog.link.title, description = Eternal.Dialog.link.description, placeholder = Eternal.Dialog.link.placeholder},
-        {type = 'number', label = Eternal.Dialog.sizeOption.title, description = Eternal.Dialog.sizeOption.description, placeholder = Eternal.Dialog.sizeOption.placeholder, min = Eternal.Dialog.size.min, max = Eternal.Dialog.size.max},
+    local input = lib.inputDialog(Config.Dialog.title, {
+        {type = 'input', label = Config.Dialog.link.title, description = Config.Dialog.link.description, placeholder = Config.Dialog.link.placeholder},
+        {type = 'number', label = Config.Dialog.sizeOption.title, description = Config.Dialog.sizeOption.description, placeholder = Config.Dialog.sizeOption.placeholder, min = Config.Dialog.size.min, max = Config.Dialog.size.max},
     })
     
     if not input then return end
@@ -41,31 +24,31 @@ DisplayCrosshair = function()
 
     if link == '' then
         lib.notify({
-            title = Eternal.Notify.NoLink.title,
-            type = Eternal.Notify.NoLink.type,
-            position = Eternal.Notify.NoLink.position,
-            showDuration = Eternal.Notify.NoLink.showDuration
+            title = Config.Notify.NoLink.title,
+            type = Config.Notify.NoLink.type,
+            position = Config.Notify.NoLink.position,
+            showDuration = Config.Notify.NoLink.showDuration
         })
         return
     end
 
-    if not size or size < Eternal.Dialog.size.min or size > Eternal.Dialog.size.max then
+    if not size or size < Config.Dialog.size.min or size > Config.Dialog.size.max then
         lib.notify({
-            title = Eternal.Notify.InvalidSize.title,
-            type = Eternal.Notify.InvalidSize.type,
-            position = Eternal.Notify.InvalidSize.position,
-            showDuration = Eternal.Notify.InvalidSize.showDuration
+            title = Config.Notify.InvalidSize.title,
+            type = Config.Notify.InvalidSize.type,
+            position = Config.Notify.InvalidSize.position,
+            showDuration = Config.Notify.InvalidSize.showDuration
         })
         return
     end
 
     lib.notify({
-        title = Eternal.Notify.CrosshairActive.title,
-        description = Eternal.Notify.CrosshairActive.description,
-        type = Eternal.Notify.CrosshairActive.type,
-        position = Eternal.Notify.CrosshairActive.position,
-        Duration = Eternal.Notify.CrosshairActive.Duration,
-        showDuration = Eternal.Notify.CrosshairActive.showDuration
+        title = Config.Notify.CrosshairActive.title,
+        description = Config.Notify.CrosshairActive.description,
+        type = Config.Notify.CrosshairActive.type,
+        position = Config.Notify.CrosshairActive.position,
+        Duration = Config.Notify.CrosshairActive.Duration,
+        showDuration = Config.Notify.CrosshairActive.showDuration
     })
 
     if not previousCrosshair or previousCrosshair.link ~= link or previousCrosshair.size ~= size then
@@ -105,42 +88,42 @@ function LoadCrosshair()
     end
 end
 
-if Eternal.Enabled then
+if Config.Enabled then
     RegisterCommand('crosshair', function()
-        lib.showContext('eternal_crosshairmenu')
-    end)
+        lib.showContext('lf_crosshairmenu')
+    end, false)
 end
 
 lib.registerContext({
-    id = 'eternal_crosshairmenu',
-    title = Eternal.Menu.title,
+    id = 'lf_crosshairmenu',
+    title = Config.Menu.title,
     options = {
-        Eternal.Enabled and {
-            title = Eternal.Menu.basicInfo.title,
-            description = Eternal.Menu.basicInfo.description,
-            icon = Eternal.Menu.basicInfo.icon,
-            progress = Eternal.Menu.basicInfo.progress,
-            colorScheme = Eternal.Menu.basicInfo.colorScheme,
+        Config.Enabled and {
+            title = Config.Menu.basicInfo.title,
+            description = Config.Menu.basicInfo.description,
+            icon = Config.Menu.basicInfo.icon,
+            progress = Config.Menu.basicInfo.progress,
+            colorScheme = Config.Menu.basicInfo.colorScheme,
             readOnly = true,
-            metadata = Eternal.Watermark and {
-                {label = 'Made by', value = 'Eternal Studio'},
+            metadata = Config.Watermark and {
+                {label = 'Lavet af', value = 'LF Scripts'},
                 {label = 'Discord', value = '.gg/h96X7M9YPc'}
             } or nil,
         } or nil,
         {
-            title = Eternal.Menu.crosshair.title,
-            description = Eternal.Menu.crosshair.description,
-            icon = Eternal.Menu.crosshair.icon,
-            arrow = Eternal.Menu.crosshair.arrow,
+            title = Config.Menu.crosshair.title,
+            description = Config.Menu.crosshair.description,
+            icon = Config.Menu.crosshair.icon,
+            arrow = Config.Menu.crosshair.arrow,
             onSelect = function()
                 DisplayCrosshair()
             end
         },
         {
-            title = Eternal.Menu.removeCrosshair.title,
-            description = Eternal.Menu.removeCrosshair.description,
-            icon = Eternal.Menu.removeCrosshair.icon,
-            arrow = Eternal.Menu.removeCrosshair.arrow,
+            title = Config.Menu.removeCrosshair.title,
+            description = Config.Menu.removeCrosshair.description,
+            icon = Config.Menu.removeCrosshair.icon,
+            arrow = Config.Menu.removeCrosshair.arrow,
             onSelect = function()
                 SendNUIMessage({
                     type = 'displayCrosshair',
@@ -150,20 +133,20 @@ lib.registerContext({
                 SetResourceKvp("crosshair", '') 
                 previousCrosshair = nil 
                 lib.notify({
-                    title = Eternal.Notify.CrosshairRemoved.title,
-                    description = Eternal.Notify.CrosshairRemoved.description,
-                    type = Eternal.Notify.CrosshairRemoved.type,
-                    position = Eternal.Notify.CrosshairRemoved.position,
-                    showDuration = Eternal.Notify.CrosshairRemoved.showDuration
+                    title = Config.Notify.CrosshairRemoved.title,
+                    description = Config.Notify.CrosshairRemoved.description,
+                    type = Config.Notify.CrosshairRemoved.type,
+                    position = Config.Notify.CrosshairRemoved.position,
+                    showDuration = Config.Notify.CrosshairRemoved.showDuration
                 })
             end
         },
-        Eternal.Menu.premadeCrosshairs.enabled and {
-            title = Eternal.Menu.premadeCrosshairs.title,
-            description = Eternal.Menu.premadeCrosshairs.description,
-            icon = Eternal.Menu.premadeCrosshairs.icon,
-            menu = 'eternal_premade_crosshair',
-            arrow = Eternal.Menu.premadeCrosshairs.arrow
+        Config.Menu.premadeCrosshairs.enabled and {
+            title = Config.Menu.premadeCrosshairs.title,
+            description = Config.Menu.premadeCrosshairs.description,
+            icon = Config.Menu.premadeCrosshairs.icon,
+            menu = 'lf_premade_crosshair',
+            arrow = Config.Menu.premadeCrosshairs.arrow
         } or nil,
     }
 })
@@ -171,13 +154,13 @@ lib.registerContext({
 
 if lib and lib.registerContext then
     local context = {
-        id = 'eternal_premade_crosshair',
-        title = Eternal.Premade.title,
-        menu = 'eternal_crosshairmenu',
+        id = 'lf_premade_crosshair',
+        title = Config.Premade.title,
+        menu = 'lf_crosshairmenu',
         options = {}
     }
 
-    for _, crosshair in ipairs(Eternal.Premade.crosshairs) do
+    for _, crosshair in ipairs(Config.Premade.crosshairs) do
         table.insert(context.options, {
             title = crosshair.title,
             description = crosshair.description,
@@ -186,12 +169,12 @@ if lib and lib.registerContext then
             onSelect = function()
                 SetPremadeCrosshair(crosshair.link, crosshair.size)
                 lib.notify({
-                    title = Eternal.Notify.CrosshairActive.title,
-                    description = Eternal.Notify.CrosshairActive.description,
-                    type = Eternal.Notify.CrosshairActive.type,
-                    position = Eternal.Notify.CrosshairActive.position,
-                    duration = Eternal.Notify.CrosshairActive.duration,
-                    showDuration = Eternal.Notify.CrosshairActive.showDuration
+                    title = Config.Notify.CrosshairActive.title,
+                    description = Config.Notify.CrosshairActive.description,
+                    type = Config.Notify.CrosshairActive.type,
+                    position = Config.Notify.CrosshairActive.position,
+                    duration = Config.Notify.CrosshairActive.duration,
+                    showDuration = Config.Notify.CrosshairActive.showDuration
                 })
             end
         })
