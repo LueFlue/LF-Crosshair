@@ -1,15 +1,15 @@
-Eternal = {}
+Config = {}
 
-Eternal.Enabled = true -- Enable or Disable the Crosshair Menu
-Eternal.Watermark = true -- Just a little text when you hover over BasicInfo
+Config.Enabled = true
+Config.Watermark = true
 
-Eternal.Menu = {
+Config.Menu = {
     title = 'Crosshair Menu',
 
     basicInfo = {
         enabled = true,
 
-        title = 'Choice your completely own crosshair or use a premade crosshair. Have fun!',
+        title = 'Vælg dit helt eget crosshair eller tag et premade!',
         description = '',
         icon = 'fa-solid fa-circle-info',
         progress = 100,
@@ -24,7 +24,7 @@ Eternal.Menu = {
     },
 
     removeCrosshair = {
-        title = 'Remove Crosshair',
+        title = 'Fjern Crosshair',
         description = '',
         icon = 'fa-solid fa-trash',
         arrow = false,
@@ -41,7 +41,7 @@ Eternal.Menu = {
 }
 
 
-Eternal.Premade = {
+Config.Premade = {
     title = 'Premade Crosshairs',
     crosshairs = {
         {
@@ -90,46 +90,46 @@ Eternal.Premade = {
 }
 
 
-Eternal.Dialog = {
+Config.Dialog = {
     title = 'Crosshair Menu',
 
     size = {
         min = 0,
-        max = 500,
+        max = 1000,
     },
 
     link = {
-        title = 'URL (Image URL)',
-        description = 'URL to your crosshair',
-        placeholder = 'Fx: https://cdn.discordapp.com/',
+        title = 'Link (Billed URL)',
+        description = 'Link til dit crosshair (kan forårsage lidt lag)',
+        placeholder = 'Fx: https://media.discordapp.net/',
     },
 
     sizeOption = {
-        title = 'Size',
-        description = 'Choice a size',
-        placeholder = 'Example: 150',
+        title = 'Størrelse',
+        description = 'Vælg en størrelse',
+        placeholder = 'Fx: 150',
     }
 }
 
 
-Eternal.Notify = {
+Config.Notify = {
     NoLink = {
-        title = 'You need a url',
+        title = 'Du skal have et link',
         type = 'error',
         position = 'center-right',
         showDuration = false,
     },
     
     InvalidSize = {
-        title = 'Size is invaild',
+        title = 'Størrelsen skal være "MIN 0" & "MAX 1000"',
         type = 'error',
         position = 'center-right',
         showDuration = false
     },
 
     CrosshairActive = {
-        title = 'Crosshair Active!',
-        description = 'Warning: This can make you lag a little bit.',
+        title = 'Crosshair aktiveret!',
+        description = 'Bemærk: Dette kan forårsage lidt lag.',
         type = 'info',
         position = 'center-right',
         duration = 5000,
@@ -137,7 +137,7 @@ Eternal.Notify = {
     },
 
     CrosshairRemoved = {
-        title = 'Crosshair Removed',
+        title = 'Crosshair Fjernet',
         description = '',
         type = 'success',
         position = 'center-right',
