@@ -1,7 +1,7 @@
 Config = {}
 
-Config.Enabled = true
-Config.Watermark = true
+Config.Enabled = true -- Enable or Disable the Crosshair Menu
+Config.Watermark = true -- Just a little text when you hover over BasicInfo
 
 Config.Menu = {
     title = 'Crosshair Menu',
@@ -48,43 +48,36 @@ Config.Premade = {
             title = 'Crosshair 1',
             description = '',
             icon = 'fa-solid fa-crosshairs',
-            link = 'https://cdn.discordapp.com/attachments/914398181775786074/1268909066692984843/layer.png?ex=6794d9a8&is=67938828&hm=2f36ea1677d27ab56b192af901aa56e3fc52d2258a8a06d74af99d8806f8917e&',
+            link = 'https://cdn.discordapp.com/attachments/1340103339454763018/1340103793211342919/layer.png?ex=67b1246a&is=67afd2ea&hm=d13631e0e102ba728e442da8e4066ff82ecb6328fc5ae1a9695dd0efab501e85&',
             size = 350
         },
         {
             title = 'Crosshair 2',
             description = '',
             icon = 'fa-solid fa-crosshairs',
-            link = 'https://cdn.discordapp.com/attachments/914398181775786074/1242592610388803725/layer.png?ex=67955a0c&is=6794088c&hm=a5700979be51ba2bb14f5c467f8be0039f06e1e63e9008e3e7361d7c0ef3a393&',
-            size = 350
+            link = 'https://cdn.discordapp.com/attachments/1340103339454763018/1340103981837582356/Layer2.png?ex=67b12497&is=67afd317&hm=9a6cba07bc6b522d4441eeba80e1e1b3c3fe25d13a59c59fb00ee9dce447ab31&',
+            size = 200
         },
         {
             title = 'Crosshair 3',
             description = '',
             icon = 'fa-solid fa-crosshairs',
-            link = 'https://cdn.discordapp.com/attachments/914398181775786074/1242592556194205756/Layer.png?ex=679559ff&is=6794087f&hm=9bc383a3c5f207b5187a4cd4a816397480897bbef50611da83d4846188b77d12&',
-            size = 300
+            link = 'https://cdn.discordapp.com/attachments/1340103339454763018/1340104313397313648/white_crossair.png?ex=67b124e6&is=67afd366&hm=41866ef3af677129310e73caf326bba4c5022585e334ad314383578c90aff0e8&',
+            size = 70
         },
         {
             title = 'Crosshair 4',
             description = '',
             icon = 'fa-solid fa-crosshairs',
-            link = 'https://cdn.discordapp.com/attachments/914398181775786074/1044560329549553775/unknown.png?ex=679565dd&is=6794145d&hm=d2daa53855aa1b7744bf85c5a9c00cf26997904ae805e4675e739a1d99c60b58&',
-            size = 50
+            link = 'https://cdn.discordapp.com/attachments/1340103339454763018/1340104586534322247/unknown.png?ex=67b12527&is=67afd3a7&hm=786820ada9601b719559bab83f68d23d24644269418444ebc9ff7573de63f973&',
+            size = 75
         },
         {
-            title = 'Crosshair 5',
+            title = 'Crosshair 5 (GIF)',
             description = '',
             icon = 'fa-solid fa-crosshairs',
-            link = 'https://cdn.discordapp.com/attachments/914398181775786074/1044559559353704458/unknown.png?ex=67956525&is=679413a5&hm=0ca000c2f5f37d4717f44f153918ed0dfc814d3b0148c868c66635b5b86de768&',
-            size = 85
-        },
-        {
-            title = 'Crosshair 6 (GIF)',
-            description = '',
-            icon = 'fa-solid fa-crosshairs',
-            link = 'https://cdn.discordapp.com/attachments/914398181775786074/917466969802948668/rainbow.gif?ex=67951eb3&is=6793cd33&hm=598cf83654bbf72749615a13ed61e4f5372777ab47867bb6b4e7d873c5df6deb&',
-            size = 150
+            link = 'https://cdn.discordapp.com/attachments/1340103339454763018/1340104830571778148/rainbow.gif?ex=67b12561&is=67afd3e1&hm=91baa307b5a679ed9f11cc8db5339d0521037beead7677cd5e464c4e06ea556c&',
+            size = 75
         },
     }
 }
