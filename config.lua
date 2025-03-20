@@ -1,7 +1,7 @@
 Config = {}
 
-Config.Enabled = true -- Enable or Disable the Crosshair Menu
-Config.Watermark = true -- Just a little text when you hover over BasicInfo
+Config.Enabled = true -- Enable eller Disable Crosshair Menuen
+Config.Watermark = true -- Watermark ved BasicInfo
 
 Config.Menu = {
     title = 'Crosshair Menu',
